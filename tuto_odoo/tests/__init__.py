@@ -1,0 +1,1 @@
+from . import test_tuto_odoo

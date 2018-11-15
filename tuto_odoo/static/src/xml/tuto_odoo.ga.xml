@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="tuto_odoo.maindashboard">
+        <div class="o_dashboards">
+            <div class="container-fluid o_website_dashboard">
+            </div>
+        </div>
+    </t>
+
+    <t t-name="tuto_odoo.dashboard_content">
+        <div class="o_website_dashboard_content">
+            <t t-call="tuto_odoo.google_analytics_content"/>
+        </div>
+    </t>
+
+    <t t-name="tuto_odoo.google_analytics_content">
+        <div class="row o_dashboard_visits">
+            <div class="col-12 o_box">
+                <div>
+                    <div class="row js_analytics_components"/>
+                    <button class="btn btn-primary js_link_analytics_settings d-block mx-auto mb8">Link my Analytics Account</button>
+                    <t t-if="widget.dashboard_data &amp;&amp; widget.dashboard_data.ga_client_id">
+                        <button class="js_authorize" style="display: block;">Authorize</button>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    <div t-name="tuto_odoo.ga_dialog_content">
+        Your Tracking ID: <input type="text" name="ga_key" placeholder="UA-XXXXXXXX-Y" t-att-value="ga_key" style="width: 100%"></input>
+        <a href="https://analytics.google.com/analytics/web/" target="_blank">
+            <i class="fa fa-arrow-right"/>
+            Where to get my Tracking ID
+        </a>
+        <br/><br/>
+        Your Client ID: <input type="text" name="ga_client_id" t-att-value="ga_client_id" style="width: 100%"></input>
+        <a href="https://console.developers.google.com/apis/credentials" target="_blank">
+            <i class="fa fa-arrow-right"/>
+            Where to get my Client ID and Client Secret
+        </a>
+        <br/><br/>
+        Your Domain: <input type="text" name="domain" t-att-value="domain" style="width: 100%"></input>
+    </div>
+
+</templates>
