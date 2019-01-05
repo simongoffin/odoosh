@@ -34,6 +34,7 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'qweb': ['static/src/xml/tuto_odoo.ga.xml'],
     'installable': True,
     'application': True,
 }

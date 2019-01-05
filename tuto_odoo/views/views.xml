@@ -36,7 +36,10 @@
         <field name="arch" type="xml">
             <form string="Model first">
               <header>
-                  <!-- <button string='More' name="get_more" class="oe_highlight" type="object"/> -->
+                  <button name="action_validate" type="object" states="draft" class="btn-secondary" string="Validate"/>
+                  <button name="action_cancel" type="object" states="validate" class="btn-secondary" string="Cancel"/>
+                  <button name="action_reset" type="object" states="cancel" class="btn-secondary" string="Reset to Draft"/>
+                  <field name="state" widget="statusbar" />
               </header>
               <sheet>
                 <group col="2" string="Details">
@@ -51,12 +54,62 @@
         </field>
     </record>
 
-    <!-- actions opening views on models -->
+    <record model="ir.ui.view" id="tuto_odoo.list2">
+      <field name="name">Model second list</field>
+      <field name="model">model.second</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="user_id"/>
+          <field name="domain"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id='tuto_odoo.form2' model='ir.ui.view'>
+        <field name="name">Model second form</field>
+        <field name="model">model.second</field>
+        <field name="arch" type="xml">
+            <form string="Model second">
+              <header>
+                  <!-- <button string='More' name="get_more" class="oe_highlight" type="object"/> -->
+              </header>
+              <sheet>
+                <group col="2" string="Details">
+                    <group>
+                        <field name="user_id"/>
+                        <field name="domain"/>
+                        <field name="ga_key"/>
+                        <field name="ga_client_id"/>
+                        <field name="ga_client_secret"/>
+                    </group>
+                </group>
+              </sheet>
+            </form>
+        </field>
+    </record>
     
     <record model="ir.actions.act_window" id="tuto_odoo.action_window">
       <field name="name">model_first window</field>
       <field name="res_model">model.first</field>
       <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tuto_odoo.action_window2">
+      <field name="name">model_second window</field>
+      <field name="res_model">model.second</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="tuto_odoo.backend_dashboard" model="ir.actions.client">
+        <field name="name">Analytics</field>
+        <field name="tag">backend_dashboard</field>
+    </record>
+
+    <record id="ir_actions_server_website_google_analytics" model="ir.actions.server">
+        <field name="name">Website: Dashboard</field>
+        <field name="model_id" ref="tuto_odoo.model_model_first"/>
+        <field name="state">code</field>
+        <field name="code">action = model.env.ref('tuto_odoo.backend_dashboard').read()[0]</field>
     </record>
     
     <!-- Top menu item -->
@@ -70,7 +123,14 @@
     <!-- actions -->
     
     <menuitem name="Model first List" id="tuto_odoo.menu_1_list" parent="tuto_odoo.menu_1"
-              action="tuto_odoo.action_window"/>
+              sequence="10" action="tuto_odoo.action_window"/>
+
+     <menuitem name="Model second List" id="tuto_odoo.menu_2_list" parent="tuto_odoo.menu_1"
+              sequence="20" action="tuto_odoo.action_window2"/>
+
+    <menuitem id="menu_website_google_analytics" parent="tuto_odoo.menu_1"
+            sequence="30" name="Analytics"
+            action="tuto_odoo.ir_actions_server_website_google_analytics"/>
     
   </data>
 </odoo>
