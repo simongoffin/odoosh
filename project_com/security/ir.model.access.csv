@@ -1,0 +1,22 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_project_com_project_com,project_com.project_com,model_project_com_project_com,project_com.group_project_com_user,1,0,0,0
+access_project_com_project_com_manager,project_com.project_com,model_project_com_project_com,project_com.group_project_com_manager,1,1,1,1
+access_project_com_task_type_user,project_com.task.type.user,model_project_com_task_type,base.group_user,1,0,0,0
+access_project_com_task_type_project_com_user,project_com.task.type.project_com.user,model_project_com_task_type,project_com.group_project_com_user,1,0,0,0
+access_project_com_task_type_manager,project_com.task.type manager,model_project_com_task_type,project_com.group_project_com_manager,1,1,1,1
+access_project_com_task_type_portal,task_type_portal,project_com.model_project_com_task_type,base.group_portal,1,0,0,0
+access_project_com_task,project_com.task,model_project_com_task,project_com.group_project_com_user,1,1,1,1
+access_report_project_com_task_user,report.project_com.task.user,model_report_project_com_task_user,project_com.group_project_com_manager,1,1,1,1
+access_partner_task user,base.res.partner user,base.model_res_partner,project_com.group_project_com_user,1,0,0,0
+access_task_on_partner,project_com.task on partners,model_project_com_task,base.group_user,1,0,0,0
+access_task_portal,task_portal,project_com.model_project_com_task,base.group_portal,1,0,0,0
+access_project_com_user,project_com.project_com on partners,model_project_com_project_com,base.group_user,1,0,0,0
+access_project_com_portal,project_com_portal,project_com.model_project_com_project_com,base.group_portal,1,0,0,0
+access_resource_calendar,project_com.resource_calendar user,resource.model_resource_calendar,project_com.group_project_com_user,1,0,0,0
+access_resource_calendar_attendance,project_com.resource_calendar_attendance user,resource.model_resource_calendar_attendance,project_com.group_project_com_user,1,0,0,0
+access_resource_calendar_leaves_user,resource.calendar.leaves user,resource.model_resource_calendar_leaves,project_com.group_project_com_user,1,1,1,1
+access_project_com_tags_all,project_com.project_com_tags_all,model_project_com_tags,,1,0,0,0
+access_project_com_tags_manager,project_com.project_com_tags_manager,model_project_com_tags,project_com.group_project_com_manager,1,1,1,1
+access_project_com_tags_portal,project_com_tags_portal,project_com.model_project_com_tags,base.group_portal,1,0,0,0
+access_mail_alias,mail.alias,mail.model_mail_alias,project_com.group_project_com_manager,1,1,1,1
+access_mail_activity_type_project_com_manager,mail.activity.type.project_com.manager,mail.model_mail_activity_type,project_com.group_project_com_manager,1,1,1,1

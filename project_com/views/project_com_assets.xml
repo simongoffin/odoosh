@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <template id="assets_backend" name="project_com assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/project_com/static/src/css/project_com.css"/>
+                <script type="text/javascript" src="/project_com/static/src/js/project_com.js"></script>
+                <script type="text/javascript" src="/project_com/static/src/js/project_com_task_kanban_examples.js"></script>
+                <script type="text/javascript" src="/project_com/static/src/js/tour.js"></script>
+                <link rel="stylesheet" type="text/scss" href="/project_com/static/src/scss/project_com_dashboard.scss"/>
+            </xpath>
+        </template>
+
+        <template id="assets_frontend" inherit_id="web.assets_frontend" name="Rating Project Assets">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/scss" href="/project_com/static/src/scss/portal_rating.scss"/>
+                <script type="text/javascript" src="/project_com/static/src/js/portal_rating.js"/>
+            </xpath>
+        </template>
+
+        <template id="qunit_suite" name="project_com_test" inherit_id="web.qunit_suite">
+             <xpath expr="//t[@t-set='head']" position="inside">
+                 <script type="text/javascript" src="/project_com/static/tests/project_com_tests.js"></script>
+            </xpath>
+        </template>
+</odoo>

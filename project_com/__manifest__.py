@@ -1,0 +1,46 @@
+# -*- coding: utf-8 -*-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
+
+{
+    'name': 'Project',
+    'version': '1.1',
+    'website': 'https://www.odoo.com/page/project_com-management',
+    'category': 'Project',
+    'sequence': 10,
+    'summary': 'Organize and schedule your project_coms ',
+    'depends': [
+        'base_setup',
+        'mail',
+        'portal',
+        'rating',
+        'resource',
+        'web',
+        'web_tour',
+        'digest',
+    ],
+    'description': "",
+    'data': [
+        'security/project_com_security.xml',
+        'security/ir.model.access.csv',
+        'report/project_com_report_views.xml',
+        'views/digest_views.xml',
+        'views/rating_views.xml',
+        'views/project_com_views.xml',
+        'views/res_partner_views.xml',
+        'views/res_config_settings_views.xml',
+        'views/mail_activity_views.xml',
+        'views/project_com_assets.xml',
+        'views/project_com_portal_templates.xml',
+        'views/project_com_rating_templates.xml',
+        'data/digest_data.xml',
+        'data/project_com_mail_template_data.xml',
+        'data/project_com_data.xml',
+    ],
+    'qweb': ['static/src/xml/project_com.xml'],
+    'demo': ['data/project_com_demo.xml'],
+    'test': [
+    ],
+    'installable': True,
+    'auto_install': False,
+    'application': True,
+}
